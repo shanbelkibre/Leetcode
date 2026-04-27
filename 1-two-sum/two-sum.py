@@ -1,0 +1,13 @@
+from typing import List
+
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        mp = {}  # value -> index
+
+        for i in range(len(nums)):
+            complement = target - nums[i]
+
+            if complement in mp:
+                return [mp[complement], i]
+
+            mp[nums[i]] = i
